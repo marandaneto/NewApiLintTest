@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    // applied because of:
+    // Recommended Action: Apply the 'com.android.lint' plugin to java library project :lib. to enable lint to analyze those sources.
+    // I'd expect not to be needed because of : 'checkDependencies true' in the Android project
+    id 'com.android.lint'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+// tried to force some vars but it does not help
+lint {
+    warningsAsErrors true
+    checkReleaseBuilds true
+    checkAllWarnings true
+}
